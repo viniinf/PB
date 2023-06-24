@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 function Login({ onLogin, onSignUp }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [role, setRole] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -26,6 +27,7 @@ function Login({ onLogin, onSignUp }) {
 
       await addDoc(collection(db, 'users'), {
         email: email,
+        role: role,
       });
 
       onSignUp();
@@ -62,6 +64,24 @@ function Login({ onLogin, onSignUp }) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+        </Box>
+        <Box sx={{ mb: 2 }}>
+          <TextField
+            fullWidth
+            //required
+            select
+            label="Função"
+            variant="outlined"
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+            SelectProps={{
+              native: true,
+            }}
+          >
+            <option value="">Selecione a função</option>
+            <option value="Administrador">Administrador</option>
+            <option value="Gerente">Gerente</option>
+          </TextField>
         </Box>
         <Box sx={{ mb: 2 }}>
           <Button fullWidth type="submit" variant="contained" color="primary">
