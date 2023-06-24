@@ -3,7 +3,7 @@ import { useRoutes, Link, Outlet, Navigate } from 'react-router-dom';
 import { db, auth } from '../utils/firebase';
 import { collection, addDoc, getDocs, deleteDoc, doc, updateDoc, query, where, onSnapshot } from 'firebase/firestore';
 import { FiLogOut, FiEdit, FiTrash2, FiCheck, FiX, FiSearch } from 'react-icons/fi';
-import data from '.././.././../public/data.json';
+import data from '../../public/data.json';
 import './DataEntry.css';
 
 function DataEntry() {

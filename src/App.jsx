@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { auth } from './src/utils/firebase';
-import Login from './src/components/authentication/Login';
-import DataEntry from './src/components/DataEntry';
+import { auth } from './utils/firebase';
+import Login from './components/authentication/Login';
+import DataEntry from './components/DataEntry';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import AboutUs from './routes/AboutUs';
 
